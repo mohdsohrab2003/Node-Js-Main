@@ -1,0 +1,96 @@
+<nav class="bg-white border-b shadow-md dark:bg-gray-900">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3">
+      <img
+        src="https://flowbite.com/docs/images/logo.svg"
+        class="h-9 transition-transform hover:scale-105"
+        alt="Airbnb Logo"
+      />
+      <span class="text-2xl font-bold text-gray-800 dark:text-white">Airbnb</span>
+    </a>
+
+    <!-- Right-side controls -->
+    <div class="flex items-center md:order-2 gap-2">
+      <!-- Mobile Search Toggle Button -->
+      <button
+        type="button"
+        data-collapse-toggle="navbar-search"
+        aria-controls="navbar-search"
+        aria-expanded="false"
+        class="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-2 focus:ring-blue-500"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+          <path d="m19 19-4-4m0-7a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="sr-only">Search</span>
+      </button>
+
+      <!-- Desktop Search Input -->
+      <div class="hidden md:block relative">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+          <svg class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 20 20">
+            <path d="m19 19-4-4m0-7a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <input
+          type="text"
+          class="w-48 md:w-64 pl-10 pr-4 py-2 text-sm rounded-lg border border-gray-300 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          placeholder="Search..."
+        />
+      </div>
+
+      <!-- Hamburger Menu -->
+      <button
+        data-collapse-toggle="navbar-search"
+        type="button"
+        class="inline-flex items-center justify-center p-2 w-10 h-10 text-gray-600 rounded-lg md:hidden hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700"
+        aria-controls="navbar-search"
+        aria-expanded="false"
+      >
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <span class="sr-only">Open main menu</span>
+      </button>
+    </div>
+
+    <!-- Nav Links + Mobile Search -->
+    <div class="hidden w-full md:flex md:items-center md:w-auto md:order-1" id="navbar-search">
+      <!-- Mobile Search -->
+      <div class="relative mt-3 md:hidden">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+          <svg class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 20 20">
+            <path d="m19 19-4-4m0-7a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <input
+          type="text"
+          class="block w-full pl-10 pr-4 py-2 mt-2 text-sm rounded-lg border border-gray-300 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          placeholder="Search..."
+        />
+      </div>
+
+      <!-- Navigation Items -->
+      <ul class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mt-4 md:mt-0 text-sm font-medium">
+        <li>
+          <a href="/" class="block py-2 px-3 rounded hover:text-blue-700 text-blue-700 dark:text-blue-500">Home List</a>
+        </li>
+        
+        <li>
+          <a href="/booking" class="block py-2 px-3 rounded text-gray-700 hover:text-blue-700 dark:text-white dark:hover:text-blue-500">Booking</a>
+        </li>
+        <li>
+          <a href="/favourite-list" class="block py-2 px-3 rounded text-gray-700 hover:text-blue-700 dark:text-white dark:hover:text-blue-500">Favourite-list</a>
+        </li>
+
+        <li>
+          <a href="/add-home" class="block py-2 px-3 rounded text-gray-700 hover:text-blue-700 dark:text-white dark:hover:text-blue-500">Add Home </a>
+        </li>
+        <li>
+          <a href="/host-home-list" class="block py-2 px-3 rounded text-gray-700 hover:text-blue-700 dark:text-white dark:hover:text-blue-500">Host Home List </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,132 @@
+<%- include('../partials/head.ejs') %>
+<body
+  class="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"
+>
+  <%- include('../partials/navbar.ejs') %>
+
+  <!-- Page Header -->
+  <div class="bg-white/80 backdrop-blur-sm shadow-lg rounded-b-3xl mb-8 mt-7">
+    <div class="container mx-auto px-4 py-5">
+      <h2
+        class="text-3xl md:text-3xl font-bold text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2"
+      >
+        Our Premimum Home Collection
+      </h2>
+      <p class="text-black text-center max-w-2xl mx-auto">
+        Discover exceptional properties curated for your perfect lifestyle
+      </p>
+    </div>
+  </div>
+
+  <!-- Homes Grid Container -->
+  <div class="container mx-auto px-4 pb-12">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+    >
+      <% registerHome.forEach(home =>{ %>
+      <div
+        class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-2"
+      >
+        <!-- Image Container -->
+        <div class="relative overflow-hidden h-56">
+          <img
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            src="<%= home.imageLink %>"
+            alt="<%= home.house_name %>"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+          ></div>
+          <div class="absolute top-4 right-4">
+            <span
+              class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-700"
+            >
+              Featured
+            </span>
+          </div>
+        </div>
+
+        <!-- Card Content -->
+        <div class="p-6">
+          <!-- Home Title -->
+          <h3
+            class="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors"
+          >
+            <%= home.house_name %>
+          </h3>
+
+          <!-- Location -->
+          <div class="flex items-center mb-4">
+            <div
+              class="flex items-center bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium"
+            >
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <%= home.Location %>
+            </div>
+          </div>
+
+          
+
+          <!-- Price and Action -->
+          <div
+            class="flex items-center justify-between pt-4 border-t border-gray-100"
+          >
+            <div class="flex flex-col">
+              <span class="text-sm text-gray-500 font-medium"
+                >Starting from</span
+              >
+              <span class="text-2xl font-bold text-gray-900">
+                $<%= home.price.toLocaleString() %>
+              </span>
+            </div>
+            <div class="flex space-x-2">
+              <button
+                class="bg-gray-100 hover:bg-gray-200 text-gray-700 p-2 rounded-lg transition-colors"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <button
+                class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-medium px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+      <!-- Empty State (if no homes) -->
+ <% if (registerHome.length === 0) { %>
+  <div class="text-center m-auto py-16">
+    <svg class="w-24 h-24 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2V5a2 2 0 012-2h14a2 2 0 012 2v2"></path>
+    </svg>
+    <h3 class="text-2xl font-medium text-gray-900 mb-2">No homes available</h3>
+    <p class="text-gray-500 max-w-md mx-auto">
+      There are currently no registered homes to display. Check back later for new listings.
+    </p>
+  </div>
+  <% } %>
+</div>
+
+
+    </div>
+  </div>
+</body>
+
+
+ 
+
+
