@@ -31,7 +31,6 @@ exports.getIndex = (req, res, next) => {
 exports.getHomeDetailPage = (req, res, next) => {
   const homeId = req.params.homeId;
   Home.findById(homeId, (home) => {
-    console.log(home);
-    res.render("store/Home-detials", { title: "Home Detial Page" });
+    res.render("store/Home-detials", { title: "Home Detial Page", home: home });
   });
 };

@@ -1,0 +1,32 @@
+[
+  {
+    "first_name": "sohrab",
+    "last_name": "alam",
+    "house_name": "Ansari Complex",
+    "phone": "9865324578",
+    "Location": "Noida",
+    "price": "56",
+    "email": "sohrab@gmail.com",
+    "imageLink": "https://a0.muscache.com/im/pictures/hosting/Hosting-1348703013126883881/original/7006cda1-59f4-476b-9c0b-1a36a3b62ece.jpeg?im_w=720"
+  },
+  {
+    "first_name": "Sayra ",
+    "last_name": "bano",
+    "house_name": "Bano Mahal",
+    "phone": "9125487895",
+    "Location": "Patna ,Bihar",
+    "price": "56",
+    "email": "sayrab@gamil.com",
+    "imageLink": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQyNDM5OTkyMzI5MTA3MzEwMQ==/original/d0be3607-3ed6-4600-ba30-d62a76982076.jpeg?im_w=1200"
+  },
+  {
+    "first_name": "Tanveer ",
+    "last_name": "Ansari",
+    "house_name": "Tanveer Haweli",
+    "phone": "6598457812",
+    "Location": "Dehradun",
+    "price": "547",
+    "email": "tanveer@gamil.com",
+    "imageLink": "https://a0.muscache.com/im/pictures/hosting/Hosting-643964023822467641/original/44979a00-9db3-4b2a-b5b7-298ed89d2a91.jpeg?im_w=1200"
+  }
+]
