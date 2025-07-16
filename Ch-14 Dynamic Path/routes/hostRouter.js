@@ -1,12 +1,15 @@
 // Core Module
 const express = require("express");
 
-const addHomeRoutes = express.Router();
+const hostRouter = express.Router();
 const hostController = require("../controller/hostController");
 
-addHomeRoutes.get("/add-home", hostController.getAddHome);
-addHomeRoutes.get("/host-home-list", hostController.getHostHome);
+hostRouter.get("/add-home", hostController.getAddHome);
+hostRouter.get("/host-home-list", hostController.getHostHome);
 
-addHomeRoutes.post("/add-home", hostController.postHome);
+hostRouter.post("/add-home", hostController.postHome);
+hostRouter.get("/host/edit-home/:homeId", hostController.getEditHome);
+hostRouter.post("/host/edit-home/:id", hostController.postEditHome);
+// hostRouter.delete("/delete-home/:id", hostController.deleteHome)
 
-exports.addHomeRoutes = addHomeRoutes;
+exports.hostRouter = hostRouter;

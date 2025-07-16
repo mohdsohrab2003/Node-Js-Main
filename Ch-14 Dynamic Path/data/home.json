@@ -20,5 +20,27 @@
     "price": "56",
     "email": "aravv811@gmail.com",
     "imageLink": "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg"
+  },
+  {
+    "id": "758acff8-0fea-4280-8d39-5b669b4c8d97",
+    "first_name": " ",
+    "last_name": " ",
+    "house_name": " ",
+    "phone": " ",
+    "Location": " ",
+    "price": "",
+    "email": "aravv891@niet.co.in",
+    "imageLink": " "
+  },
+  {
+    "first_name": " ",
+    "last_name": " ",
+    "house_name": " ",
+    "phone": " ",
+    "Location": " ",
+    "price": " ",
+    "email": "",
+    "imageLink": "aravv891@niet.co.in",
+    "id": "001d789a-a974-4420-9cb0-cc01f48657c7"
   }
 ]

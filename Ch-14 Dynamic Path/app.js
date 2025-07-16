@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 // const rootDir = require("./utils/pathUtis");
 const { userRoutes } = require("./routes/storeRouter");
-const { addHomeRoutes } = require("./routes/hostRouter");
+const { hostRouter } = require("./routes/hostRouter");
 
 
 const app = express();
@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 const errorController = require("./controller/error");
 app.use(userRoutes);
-app.use(addHomeRoutes);
+app.use(hostRouter);
 
 const PORT = 8080;
 app.use(errorController.pageNotFound);

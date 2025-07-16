@@ -6,7 +6,6 @@ const { error } = require("console");
 const homeDataPath = path.join(rootDir, "data", "home.json");
 module.exports = class Home {
   constructor(
-    id,
     first_name,
     last_name,
     house_name,
@@ -16,7 +15,6 @@ module.exports = class Home {
     email,
     imageLink
   ) {
-    this.id = uuidv4();
     this.first_name = first_name;
     this.last_name = last_name;
     this.house_name = house_name;
@@ -29,20 +27,27 @@ module.exports = class Home {
 
   save() {
     // this.id = Math.random().toString();
+
     Home.fetchAll((registerHome) => {
-      registerHome.push(this);
+      if (this.id) {
+        registerHome = registerHome.map((home) =>
+          home.id === this.id ? this : home
+        );
+      } else {
+        this.id = uuidv4();
+        registerHome.push(this);
+      }
+
       fs.writeFile(homeDataPath, JSON.stringify(registerHome), (error) => {
         console.log("Writing File Conculed", error);
       });
     });
   }
 
- 
   static fetchAll(callback) {
     fs.readFile(homeDataPath, (err, data) => {
-      const text=data.toString();
+      const text = data.toString();
       callback(!err ? JSON.parse(text) : []);
-      
     });
   }
 
@@ -52,5 +57,4 @@ module.exports = class Home {
       callback(foundHome);
     });
   }
-  
 };
