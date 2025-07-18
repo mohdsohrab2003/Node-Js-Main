@@ -10,16 +10,16 @@
       <h2
         class="text-3xl md:text-3xl font-bold text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2"
       >
-        Our Premimum Home Collection
+        Your Favourite Home 
       </h2>
       <p class="text-black text-center max-w-2xl mx-auto">
         Discover exceptional properties curated for your perfect lifestyle
       </p>
     </div>
   </div>
-
-  <!-- Homes Grid Container -->
-  <div class="container mx-auto px-4 pb-12">
+  
+   <!-- Homes Grid Container -->
+   <div class="container mx-auto px-4 pb-12">
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
     >
@@ -31,7 +31,7 @@
         <div class="relative overflow-hidden h-56">
           <img
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            src="<%= home.image_link %>"
+            src="<%= home.imageLink %>"
             alt="<%= home.house_name %>"
           />
           <div
@@ -67,7 +67,7 @@
                   clip-rule="evenodd"
                 ></path>
               </svg>
-              <%= home.location %>
+              <%= home.Location %>
             </div>
           </div>
 
@@ -86,13 +86,21 @@
               </span>
             </div>
             <div class="flex space-x-4">
-              <%- include('../partials/favourite.ejs', {home : home}) %>
+              
               <a
                 href="/home-list/<%= home.id %>"
                 class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-medium px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl inline-block text-center"
                   >
               Detail
                 </a>
+                <form action="/favourite-list/delete/<%= home.id %>" method="POST">
+              <button
+               type="submit"
+                class="bg-gradient-to-r from-pink-500 to-red-500 hover:from-red-600 hover:to-red-700 text-white font-medium px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl inline-block text-center"
+                >
+                Delete
+              </button>
+                </form>
               
             </div>
           </div>
@@ -115,6 +123,8 @@
 
 
     </div>
+
+ 
   </div>
 </body>
 
