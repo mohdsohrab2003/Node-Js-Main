@@ -2,7 +2,7 @@ const Favourite = require("../Model/favourite");
 const Home = require("../Model/home");
 
 exports.getHome = (req, res, next) => {
-  Home.fetchAll((registerHome) => {
+  Home.fetchAll().then(([registerHome, fields]) => {
     res.render("store/Home-list", {
       title: "Home-list Page ",
       registerHome: registerHome,
@@ -10,7 +10,7 @@ exports.getHome = (req, res, next) => {
   });
 };
 exports.getBooking = (req, res, next) => {
-  Home.fetchAll((registerHome) => {
+  Home.fetchAll().then(([registerHome, fields]) => {
     res.render("store/Booking-list", {
       title: "Booking List",
       registerHome: registerHome,
@@ -53,7 +53,7 @@ exports.deleteFavouriteHome = (req, res, next) => {
 };
 
 exports.getIndex = (req, res, next) => {
-  Home.fetchAll((registerHome) => {
+  Home.fetchAll().then(([registerHome, fields]) => {
     res.render("store/Index", {
       title: "Home Page ",
       registerHome: registerHome,

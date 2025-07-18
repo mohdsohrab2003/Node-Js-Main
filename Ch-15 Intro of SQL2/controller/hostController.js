@@ -32,7 +32,8 @@ exports.postHome = (req, res, next) => {
     Location,
     price,
     email,
-    imageLink,
+    image_link,
+    discription,
   } = req.body;
   const home = new Home(
     id,
@@ -43,7 +44,8 @@ exports.postHome = (req, res, next) => {
     Location,
     price,
     email,
-    imageLink
+    image_link,
+    discription
   );
   home.save();
 
@@ -61,9 +63,11 @@ exports.postEditHome = (req, res, next) => {
     Location,
     price,
     email,
-    imageLink,
+    image_link,
+    discription,
   } = req.body;
   const home = new Home(
+    id,
     first_name,
     last_name,
     house_name,
@@ -71,9 +75,10 @@ exports.postEditHome = (req, res, next) => {
     Location,
     price,
     email,
-    imageLink
+    image_link,
+    discription
   );
-  home.id = id;
+
   home.save();
   res.redirect("/host-home-list");
 };
@@ -90,7 +95,7 @@ exports.deleteHome = (req, res, next) => {
 };
 
 exports.getHostHome = (req, res, next) => {
-  Home.fetchAll((registerHome) => {
+  Home.fetchAll().then(([registerHome, fields]) => {
     res.render("host/Host-Home-list", {
       title: "Host Home List  ",
       registerHome: registerHome,

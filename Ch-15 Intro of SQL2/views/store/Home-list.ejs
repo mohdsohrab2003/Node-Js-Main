@@ -10,7 +10,7 @@
       <h2
         class="text-3xl md:text-3xl font-bold text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2"
       >
-        Here Host Your Home
+        Premium Home Collection
       </h2>
       <p class="text-black text-center max-w-2xl mx-auto">
         Discover exceptional properties curated for your perfect lifestyle
@@ -31,7 +31,7 @@
         <div class="relative overflow-hidden h-56">
           <img
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            src="<%= home.imageLink %>"
+            src="<%= home.image_link %>"
             alt="<%= home.house_name %>"
           />
           <div
@@ -67,7 +67,7 @@
                   clip-rule="evenodd"
                 ></path>
               </svg>
-              <%= home.Location %>
+              <%= home.location %>
             </div>
           </div>
 
@@ -86,20 +86,22 @@
               </span>
             </div>
             <div class="flex space-x-2">
-              
-              <a href="/host/edit-home/<%= home.id %>?editing=true"
-                class="bg-gradient-to-r from-green-500 to-blue-500 hover:from-blue-600 hover:to-purple-600 text-white font-medium px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              <button
+                class="bg-gray-100 hover:bg-gray-200 text-gray-700 p-2 rounded-lg transition-colors"
               >
-                Edit
-            </a>
-            <form action="/host/delete-home<%= home.id %>" method="POST">
-                  <button type="submit"
-                class="bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-600 hover:to-purple-600 text-white font-medium px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                Delete
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
               </button>
-            </form>
-              
+              <button
+                class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-medium px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                Book Now
+              </button>
             </div>
           </div>
         </div>

@@ -3,9 +3,11 @@ const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const rootDir = require("../utils/pathUtis");
 const { error } = require("console");
+const Favourite = require("./favourite");
 const homeDataPath = path.join(rootDir, "data", "home.json");
 module.exports = class Home {
   constructor(
+    id,
     first_name,
     last_name,
     house_name,
@@ -15,6 +17,7 @@ module.exports = class Home {
     email,
     imageLink
   ) {
+    this.id = id;
     this.first_name = first_name;
     this.last_name = last_name;
     this.house_name = house_name;
@@ -37,10 +40,7 @@ module.exports = class Home {
         this.id = uuidv4();
         registerHome.push(this);
       }
-
-      fs.writeFile(homeDataPath, JSON.stringify(registerHome), (error) => {
-        console.log("Writing File Conculed", error);
-      });
+      fs.writeFile(homeDataPath, JSON.stringify(registerHome), (error) => {});
     });
   }
 
@@ -55,6 +55,14 @@ module.exports = class Home {
     this.fetchAll((homes) => {
       const foundHome = homes.find((home) => home.id === homeId);
       callback(foundHome);
+    });
+  }
+  static deleteById(homeId, callback) {
+    this.fetchAll((homes) => {
+      homes = homes.filter((home) => home.id !== homeId);
+      fs.writeFile(homeDataPath, JSON.stringify(homes), (err) => {
+        Favourite.deleteHomeFormFavourite(homeId, callback);
+      });
     });
   }
 };
