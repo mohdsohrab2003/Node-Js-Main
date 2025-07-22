@@ -3,7 +3,11 @@ const Home = require("../Model/home");
 
 // const registerHome = [];
 exports.getAddHome = (req, res, next) => {
-  res.render("host/Edit-home", { title: "Add Home ", queryEdit: false });
+  res.render("host/Edit-home", {
+    title: "Add Home ",
+    queryEdit: false,
+    isLoggedIn: req.isLoggedIn,
+  });
 };
 
 exports.getEditHome = (req, res, next) => {
@@ -21,6 +25,7 @@ exports.getEditHome = (req, res, next) => {
         title: "Edit Home",
         queryEdit,
         home,
+        isLoggedIn: req.isLoggedIn,
       });
     })
     .catch((err) => {
@@ -125,6 +130,7 @@ exports.getHostHome = (req, res, next) => {
     res.render("host/Host-Home-list", {
       title: "Host Home List",
       registerHome: registerHome,
+      isLoggedIn: req.isLoggedIn,
     });
   });
 };

@@ -6,6 +6,7 @@ exports.getHome = (req, res, next) => {
     res.render("store/Home-list", {
       title: "Home-list Page",
       registerHome: registerHome,
+      isLoggedIn: req.isLoggedIn, // Pass the login status to the view
     });
   });
 };
@@ -14,6 +15,7 @@ exports.getBooking = (req, res, next) => {
     res.render("store/Booking-list", {
       title: "Booking House",
       registerHome: registerHome,
+      isLoggedIn: req.isLoggedIn, // Pass the login status to the view
     });
   });
 };
@@ -25,6 +27,7 @@ exports.getFavouriteList = (req, res, next) => {
       res.render("store/Favourite-list", {
         title: "Your Favourite Home list",
         registerHome: favourites,
+        isLoggedIn: req.isLoggedIn, // Pass the login status to the view
       });
     });
 };
@@ -61,11 +64,13 @@ exports.deleteFavouriteHome = (req, res, next) => {
 };
 
 exports.getIndex = (req, res, next) => {
+  console.log("isLoggedIn", req.isLoggedIn);
   Home.find()
     .then((registerHome) => {
       res.render("store/Index", {
         title: "Home Page",
         registerHome,
+        isLoggedIn: req.isLoggedIn, // Pass the login status to the view
       });
     })
     .catch((err) => {
@@ -81,6 +86,7 @@ exports.getHomeDetailPage = (req, res, next) => {
       res.render("store/Home-detials", {
         title: "Home Detail Page",
         home: home,
+        isLoggedIn: req.isLoggedIn, // Pass the login status to the view
       });
     })
     .catch((err) => {
